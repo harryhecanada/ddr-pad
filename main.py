@@ -48,7 +48,7 @@ def main():
   while True: 
     
     event = pygame.event.poll()
-    if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
+    if event.type == KEYDOWN:
         break
 
     if event.type == JOYBUTTONDOWN:
@@ -62,9 +62,6 @@ def main():
       if combination_set != down_buttons:
         screen.blit(background, (0, 0))
         pygame.display.flip()
-    
-    if event.type == KEYDOWN:
-        break
 
     
 if __name__ == '__main__': 
