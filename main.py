@@ -35,7 +35,7 @@ def main():
   print ("last one is",ddrmat.get_numaxes(),"axes and",ddrmat.get_numbuttons(),"buttons")
   
   # set up the screen and all that stuff
-  screen = pygame.display.set_mode((1920, 1080), FULLSCREEN|HWSURFACE|DOUBLEBUF) 
+  screen = pygame.display.set_mode(flags=FULLSCREEN|HWSURFACE|DOUBLEBUF) 
   pygame.display.set_caption('pyDDR')
   pygame.mouse.set_visible(1)
 
@@ -62,6 +62,9 @@ def main():
       if combination_set != down_buttons:
         screen.blit(background, (0, 0))
         pygame.display.flip()
+    
+    if event.type == KEYDOWN:
+        break
 
     
 if __name__ == '__main__': 
